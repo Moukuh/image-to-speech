@@ -1,6 +1,7 @@
 tensorflow
 transformers
-pillow
-langchain
+python-dotenv
+requests
 openai
 streamlit
+langchain

@@ -1,7 +1,10 @@
+import tensorflow
+import dotenv
+import transformers
 from tensorflow import keras
 from dotenv import find_dotenv, load_dotenv
 from transformers import pipeline
-
+import langchain
 from langchain import PromptTemplate, LLMChain, OpenAI
 
 import requests
