@@ -14,10 +14,10 @@ import openai
 import streamlit as st
 
 HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
-#OPENAI_API_KEY = os.getenv("OPENAI_API_TOKEN")
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 load_dotenv(find_dotenv())
+
 
 # img to text
 def img2text(data):
@@ -27,8 +27,6 @@ def img2text(data):
 
     print(text)
     return text
-
-#img2text("/Users/moukuhdutta/Downloads/ML experiment/Hugg/images.jpeg")[0]['generated_text']
 
 
 # llm
@@ -51,6 +49,7 @@ def generate_story(scenario):
     print(story)
     return story
 
+
 # txt to speech
 def text2speech(message):
     API_URL = "https://api-inference.huggingface.co/models/espnet/kan-bayashi_ljspeech_vits"
@@ -61,9 +60,6 @@ def text2speech(message):
     with open('audio.flac', 'wb') as file:
         file.write(response.content)
 
-#scenario = img2text('/Users/moukuhdutta/Downloads/ML experiment/Hugg/images.jpeg')
-#story = generate_story(scenario)
-#text2speech(story)
 
 def main():
     st.set_page_config(page_title="Image to Speech", page_icon="🤗")
